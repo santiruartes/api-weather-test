@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background: rgb(21, 32, 43);
+  background: linear-gradient(
+    190deg,
+    rgba(34, 37, 74, 1),
+    rgba(21, 32, 43, 1) 58%
+  );
+  height: 100%;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+/* City Finder  */
+.search-container {
+  display: flex;
+}
+
+.search-container,
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Weather card  */
+/* https://www.pinterest.com/pin/1063271793249997852/ */
+
+#card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-card {
+  background-color: rgb(109, 144, 173);
+  border-radius: 10px;
+  min-width: 400px;
+  min-height: 100px;
+}
+
+.weather-card-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.weather-img {
+  max-width: 50px;
+  max-height: 100px;
+}

@@ -3,37 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Font awesome -->
     <link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-		/>
-    <link rel="stylesheet" href="style.css">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>API Weather - Test</title>
   </head>
   <body>
     <main>
-        <class="container">
-            <div class="search-box">
-                <h1 class="search-tittle">
-                <form id="form">
-                    <button type="submit">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <input type="text"
-                           name="city"
-                           autocomplete="off"
-                           placeholder="Buscar ciudad"
-                           class="search-input">
-                </form>   
-                </h1>
-            </div>
-                <p> Ingrese una ciudad...</p>
-            <section class="card-container">
-
-            </section>
+      <div class="search-container">
+        <div class="search-box">
+          <h1 class="search-tittle">
+            <form id="form">
+              <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <input
+                type="text"
+                name="city"
+                autocomplete="off"
+                placeholder="Buscar ciudad"
+                class="search-input"
+              />
+            </form>
+          </h1>
         </div>
+        <p>Ingrese una ciudad...</p>
+      </div>
+      <section id="card-container">
+        <div class="weather-card">
+          <div class="weather-card-info">
+            <div class="info-img">
+              <div><img class="weather-img" src="sun-icon-vector.jpg" /></div>
+            </div>
+
+            <div class="info-temperature">
+              <h2 class="current-temperature">24ºC</h2>
+
+              <h5 class="min-max-tempperature">10º / 28º</h5>
+            </div>
+
+            <div class="info-city-wind">
+              <h5 class="wind">S 16.km</h5>
+              <h4 class="weather-city">Buenos Aires</h4>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <script src="request.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

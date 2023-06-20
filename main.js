@@ -6,9 +6,37 @@ const form = document.getElementById("form");
 const cityInput = document.querySelector(".search-input");
 const cardContainet = document.querySelector(".card-container");
 
+const isEmptyInput = () => {
+    return cityInput.value.trim() === "";
+}
+
+const isValidCity = (cityData) => {
+    return !cityData.tz_id;
+}
 
 const searchCity = async (e) => {
     e.preventDefault();
+    
+    //Input no este vacio
+    if(isEmptyInput()) {
+        //tiramos error
+        alert("Por favor, ingrese una ciudad");
+        cityInput.reset();
+        return;
+    } 
+
+    //Si no esta vacio, realizamos la búsqueda
+    const fetchedCity = await requestCity(cityInput.value)
+
+    console.log(fetchedCity);
+    //Que la ciudad no existe, se corta ejecución
+    if(isValidCity(fetchedCity)) {
+        alert("La ciudad ingresada no existe");
+        return;
+    }
+
+    //Si existe la ciudad renderizamos card, 
+    // y cambiamos el mensaje predeterminado
 }
 
 
