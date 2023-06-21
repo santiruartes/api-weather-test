@@ -12,3 +12,4 @@ const requestCity = async (city) => {
     return data;
 };
 
+// Refactorizar y probar un try/catch para el manejar el error
