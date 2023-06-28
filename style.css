@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px 20px;
 }
 
 /* Weather card  */
@@ -45,18 +45,38 @@ body {
 .weather-card {
   background-color: rgb(109, 144, 173);
   border-radius: 10px;
-  min-width: 400px;
-  min-height: 100px;
+  min-width: 450px;
 }
 
 .weather-card-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 150px;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .weather-img {
   max-width: 50px;
-  max-height: 100px;
+  max-height: 50px;
+}
+
+.current-temperature {
+  font-size: 32px;
+  padding-left: 50px;
+}
+
+.weather-city {
+  padding-top: 25px;
 }

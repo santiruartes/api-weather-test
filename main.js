@@ -40,24 +40,25 @@ const createCityTemplate = async (cityData) => {
  <div class="weather-card">
 
     <div class="weather-card-info">
-      <div class="info-img">
-        <div><img class="weather-img" src=${imageName} /></div>
-      </div>
 
-      <div class="info-temperature">
+      <div class="weather-info">
+
+      <div class="info-img">
+        <img class="weather-img" src=${imageName} />
+        <h2 class="current-weather">${cityWeatherInfo}</h2>
+      </div>
         <h2 class="current-temperature">${cityTem}ºC</h2>
 
-        <h2 class="current-temperature">${cityWeatherInfo}</h2>
-
-        <h5 class="min-max-tempperature">${cityHumidity}% HUM </h5>
       </div>
-
+    
+      
       <div class="info-city-wind">
+        <h5 class="min-max-tempperature">${cityHumidity}% HUM </h5>
         <h5 class="wind">${cityWindDir} ${cityWind}KMH</h5>
         <h4 class="weather-city">${cityName}</h4>
       </div>
-    </div>
 
+    </div>
   </div>
     `
 }
