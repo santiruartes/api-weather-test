@@ -5,6 +5,8 @@
 const form = document.getElementById("form");
 const cityInput = document.querySelector(".search-input");
 const cardContainer = document.querySelector("#card-container");
+const card = document.querySelector(".weather-card")
+
 
 const isEmptyInput = () => {
     return cityInput.value.trim() === "";
@@ -37,7 +39,7 @@ const createCityTemplate = async (cityData) => {
         cityHumidity,
     } = await getCityData(cityData);
     return `  
- <div class="weather-card">
+ <div class="weather-card temperature-card">
 
     <div class="weather-card-info">
 
@@ -60,11 +62,32 @@ const createCityTemplate = async (cityData) => {
 
     </div>
   </div>
-    `
+    `;
+    
 }
 
+const changeColorTemp = async (cityData) => {
+    const {
+      cityTem
+    } = await getCityData(cityData)
+
+    const temperatureCard = document.querySelector(".temperature-card");
+
+    if(cityTem > -10 && cityTem <= 0){
+      temperatureCard.classList.add("temperature-cold");
+      }else if(cityTem > 1 && cityTem <= 15){
+        temperatureCard.classList.add("temperature-tempered");
+      }else if(cityTem >= 16 && cityTem <= 25){
+        temperatureCard.classList.add("temperature-warm");
+      }else if(cityTem > 26){
+        temperatureCard.classList.add("temperature-hot");
+      };
+}
+
+
 const renderCityCard = async (cityData) => {
-    cardContainer.innerHTML = await createCityTemplate(cityData);
+    cardContainer.innerHTML = await createCityTemplate(cityData) 
+    changeColorTemp(cityData);
 }
 
 const searchCity = async (e) => {
