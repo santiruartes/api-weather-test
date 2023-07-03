@@ -6,10 +6,15 @@ const key = "2f764c05b70b4deaa36203619231906"
 
 // Creamos una función que haga el fetch, realizamos la inserción de query parameters
 const requestCity = async (city) => { 
-    const response = await fetch(`${BASE_URL}current.json?key=${key}&q=${city}&aqi=no&lang=es`)
+    try {
+        const response = await fetch(`${BASE_URL}current.json?key=${key}&q=${city}&aqi=no&lang=es`)
 
-    const data = await response.json();
-    return data;
+        const data = await response.json();
+        return data;
+    } catch(error) {
+        console.error(error)
+    }
+
 };
 
 // Refactorizar y probar un try/catch para el manejar el error

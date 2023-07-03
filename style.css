@@ -43,9 +43,8 @@ body {
 }
 
 .weather-card {
-  /* background-color: rgb(109, 144, 173); */
   border-radius: 10px;
-  min-width: 450px;
+  min-width: 400px;
 }
 
 .weather-card-info {
@@ -55,10 +54,12 @@ body {
   gap: 150px;
 }
 
-.weather-info {
+.weather-info,
+.info-city-wind {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  gap: 5px;
 }
 
 .info-img {
@@ -73,12 +74,27 @@ body {
 }
 
 .current-temperature {
-  font-size: 32px;
+  font-size: 28px;
   padding-left: 50px;
 }
 
 .weather-city {
+  font-size: 24px;
   padding-top: 25px;
+}
+
+.current-weather,
+.current-temperature {
+  font-weight: 600;
+}
+
+.min-max-temperature,
+.wind,
+.weather-city {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
 }
 
 .temperature-cold {

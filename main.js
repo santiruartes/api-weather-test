@@ -18,7 +18,7 @@ const isValidCity = (cityData) => {
 
 const getCityData = (cityData) => {
     return {
-        cityName: cityData.location.region,
+        cityName: cityData.location.name,
         imageName: cityData.current.condition.icon,
         cityWeatherInfo: cityData.current.condition.text,
         cityTem: Math.round(cityData.current.temp_c),
@@ -46,8 +46,8 @@ const createCityTemplate = async (cityData) => {
       <div class="weather-info">
 
       <div class="info-img">
-        <img class="weather-img" src=${imageName} />
-        <h2 class="current-weather">${cityWeatherInfo}</h2>
+      <img class="weather-img" src=${imageName} />
+      <h2 class="current-weather">${cityWeatherInfo}</h2>
       </div>
         <h2 class="current-temperature">${cityTem}ºC</h2>
 
@@ -55,7 +55,7 @@ const createCityTemplate = async (cityData) => {
     
       
       <div class="info-city-wind">
-        <h5 class="min-max-tempperature">${cityHumidity}% HUM </h5>
+        <h5 class="min-max-temperature">${cityHumidity}% HUM </h5>
         <h5 class="wind">${cityWindDir} ${cityWind}KMH</h5>
         <h4 class="weather-city">${cityName}</h4>
       </div>
@@ -77,9 +77,9 @@ const changeColorTemp = async (cityData) => {
       temperatureCard.classList.add("temperature-cold");
       }else if(cityTem > 1 && cityTem <= 15){
         temperatureCard.classList.add("temperature-tempered");
-      }else if(cityTem >= 16 && cityTem <= 25){
+      }else if(cityTem >= 16 && cityTem <= 27){
         temperatureCard.classList.add("temperature-warm");
-      }else if(cityTem > 26){
+      }else if(cityTem >= 28){
         temperatureCard.classList.add("temperature-hot");
       };
 }
