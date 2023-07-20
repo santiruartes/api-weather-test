@@ -5,7 +5,8 @@
 const form = document.getElementById("form");
 const cityInput = document.querySelector(".search-input");
 const cardContainer = document.querySelector("#card-container");
-const card = document.querySelector(".weather-card")
+const card = document.querySelector(".weather-card");
+const searchMsg = document.querySelector(".search-city");
 
 
 const isEmptyInput = () => {
@@ -90,6 +91,10 @@ const renderCityCard = async (cityData) => {
     changeColorTemp(cityData);
 }
 
+const changeSearchMsg = async (cityData) => {
+  searchMsg.innerHTML = `Asi esta el clima en ${cityData.location.name}, ¿Te gustaría consultar el clima de otra ciudad?`
+}
+
 const searchCity = async (e) => {
     e.preventDefault();
     
@@ -116,6 +121,8 @@ const searchCity = async (e) => {
     // y cambiamos el mensaje predeterminado
 
     renderCityCard(fetchedCity);
+    changeSearchMsg(fetchedCity);
+    form.reset();
 }
 
 
