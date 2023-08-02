@@ -12,6 +12,8 @@ const requestCity = async (city) => {
         const data = await response.json();
         return data;
     } catch(error) {
+
+        `Rompimos todo, el error fue el siguiente: ${error}`
         console.error(error)
     }
 
