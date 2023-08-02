@@ -13,8 +13,9 @@ const requestCity = async (city) => {
         return data;
     } catch(error) {
 
-        `Rompimos todo, el error fue el siguiente: ${error}`
-        console.error(error)
+        console.log(error);
+
+        cardContainer.innerHTML = `<h2>Rompimos todo, el error fue el siguiente: ${error}</h2>`
     }
 
 };
